@@ -65,10 +65,25 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 
 .wrap .main-wrap{width:100%;height:100vh;background:#fff;}
 .wrap .main-wrap .header{width:100%;height:64px;border-bottom:1px solid #db3b3b;}
+
 .wrap .main-wrap .header h1{width:40px;height:100%;margin:0 auto;}
 .wrap .main-wrap .header h1 .logo{display:block;box-sizing:border-box;width:100%;height:100%;text-align:center;padding-top:12px;}
 .wrap .main-wrap .header h1 .logo img{width:24px;}
+.wrap .main-wrap .header .menu_btn{display:block;position:absolute;box-sizing:border-box;width:40px;height:100%;top:0;right:11px;}
+.wrap .main-wrap .header .menu_btn span{display:block;position:absolute;box-sizing:border-box;width:27px;height:3px;background:#dbb8b8;right:0;}
+.wrap .main-wrap .header .menu_btn span:nth-of-type(1){top:26px;}
+.wrap .main-wrap .header .menu_btn span:nth-of-type(2){top:32px;}
+.wrap .main-wrap .header .menu_btn span:nth-of-type(3){top:38px;}
+
+.wrap .main-wrap .section .search-area{width:100%;height:60px;background:#fff;}
+.wrap .main-wrap .section .select-area{width:100%;height:345px;background:#db3b3b;}
+.wrap .main-wrap .section .select-area .select-object{max-width:375px;min-width:320px;width:100%;height:345px;padding:20px 12px;margin:0 auto;}
+.wrap .main-wrap .section .select-area .select-object img:nth-of-type(1){display:block;min-width:296px;width:100%;}
+.wrap .main-wrap .section .select-area .select-object img:nth-of-type(2){display:block;position:absolute;min-width:296px;width:100%;bottom:0;}
+
+.wrap .main-wrap .section .conents-area{width:100%;height:250px;background:#fff;padding:20px;}
 
 
-
-
+.map-wrap{display:none;}
+.map-wrap .map-search .back_btn{display:block;box-sizing:border-box;width:40px;height:100%;text-align:center;}
+.map-wrap .map-search .back_btn img{width:24px;}

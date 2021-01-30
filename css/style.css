@@ -14,7 +14,7 @@ article{padding:0;margin:0;border:0;display:block;position:relative;}
 nav{padding:0;margin:0;border:0;display:block;position:relative;}
 div{box-sizing:border-box;margin:0;display:block;position:relative;}
 ul{position:relative;margin:0;padding:0;margin:0;border:0;list-style:none;display:block;box-sizing:border-box;}
-img{border:0px;box-sizing:border-box;float:left;}
+img{border:0px;box-sizing:border-box;}
 h1,h2,h3,h4,h5,h6 {padding:0;margin:0;border:0;display:block;position:relative;box-sizing:border-box;font-size:1em;}
 header{padding:0;margin:0;border:0;display:block;position:relative;}
 footer{width:100%;background:#fff;position:relative;margin:0;padding:0;margin:0;border:0;border-top:1px solid #000;display:block;z-index:5;}
@@ -58,11 +58,17 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 
 .clear_both{clear:both;}
 
-.wrap{width:100%;max-width:375px;height:100vh;max-height:812px;margin:30px auto;}
+.wrap{width:100%;min-height:812px;margin:0px auto;}
 
-.wrap .rading-page{position:fixed;width:100%;max-width:375px;height:100vh;max-height:812px;background:url('../images/source/2/randing.png') no-repeat;background-size:cover;z-index:20;}
-.wrap .rading-page .start_btn{display:block;width:100%;max-width:375px;height:100vh;max-height:812px;}
+.wrap .rading-page{display:none;position:fixed;width:100%;height:100vh;background:#db3b3b url('../images/source/logo.png') no-repeat;background-size:321px 284px;background-position:center;z-index:20;}
+.wrap .rading-page .start_btn{display:block;width:100%;height:100vh;}
 
-.wrap .main-wrap{width:100%;max-width:375px;height:100vh;max-height:812px;background:url('../images/source/3/background_main.png') no-repeat;background-size:cover;}
-.wrap .main-wrap .room_btn{width:172px;height:134px;background:url('one_room.png');}
+.wrap .main-wrap{width:100%;height:100vh;background:#fff;}
+.wrap .main-wrap .header{width:100%;height:64px;border-bottom:1px solid #db3b3b;}
+.wrap .main-wrap .header h1{width:40px;height:100%;margin:0 auto;}
+.wrap .main-wrap .header h1 .logo{display:block;box-sizing:border-box;width:100%;height:100%;text-align:center;padding-top:12px;}
+.wrap .main-wrap .header h1 .logo img{width:24px;}
+
+
+
 

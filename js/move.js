@@ -4,6 +4,6 @@ $(function(){
 			$('.rading-page').css({'display':'none'})
 		});
 	});
-
+	
 	return false;
 });

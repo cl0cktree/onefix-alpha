@@ -94,6 +94,8 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 .wrap .main-wrap .section .conents-area .conents-box{width:100%;min-width:320px;max-width:375px;min-height:256px;background:#fff;padding:17px 18px 23px;margin:0 auto;}
 .wrap .main-wrap .section .conents-area .conents-box img{width:100%;}
 
+.wrap .main-wrap .background_filter{position:fixed;width:100%;height:100vh;box-sizing:content-box;background:rgba(0,0,0,0.6);top:0;left:0;z-index:50;}
+
 .map-wrap{display:none;}
 .map-wrap .map-search .back_btn{display:block;box-sizing:border-box;width:40px;height:100%;text-align:center;}
 .map-wrap .map-search .back_btn img{width:24px;}

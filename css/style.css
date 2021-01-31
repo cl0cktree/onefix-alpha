@@ -75,7 +75,10 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 .wrap .main-wrap .header .menu_btn span:nth-of-type(2){top:32px;}
 .wrap .main-wrap .header .menu_btn span:nth-of-type(3){top:38px;}
 
-.wrap .main-wrap .section .search-area{width:100%;height:60px;background:#fff;}
+.wrap .main-wrap .section .search-area{width:100%;height:60px;}
+.wrap .main-wrap .section .search-area .search-box-wrap{width:100%;min-width:320px;max-width:375px;height:60px;background:#fff url('../images/search_wrap_background.png') no-repeat;background-size:100% 100%;padding-top:15px;padding-left:30px;margin:0 auto;overflow:hidden;}
+.wrap .main-wrap .section .search-area .search-box-wrap .search_box{width:72.46%;max-width:255px;height:32px;border:0;padding-left:5px;float:left;}
+.wrap .main-wrap .section .search-area .search-box-wrap .search_btn{width:32px;height:32px;background:url('../images/search_btn.png') no-repeat;background-size:cover;border:0;margin-right:25px;cursor:pointer;float:right;}
 .wrap .main-wrap .section .select-area{width:100%;height:345px;background:#db3b3b;}
 .wrap .main-wrap .section .select-area .select-object{max-width:375px;min-width:320px;width:100%;height:345px;padding:21px 12px 44px;margin:0 auto;}
 .wrap .main-wrap .section .select-area .select-object>img{display:block;position:absolute;width:100%;left:0;bottom:0;}
@@ -87,8 +90,9 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 .wrap .main-wrap .section .select-area .select-object .select-btn-wrap .select_3{bottom:0;left:0;}
 .wrap .main-wrap .section .select-area .select-object .select-btn-wrap .select_4{bottom:0;right:0;}
 
-.wrap .main-wrap .section .conents-area{width:100%;height:250px;background:#fff;padding:20px 18px;}
-
+.wrap .main-wrap .section .conents-area{width:100%;min-height:256px;background:#fff;}
+.wrap .main-wrap .section .conents-area .conents-box{width:100%;min-width:320px;max-width:375px;min-height:256px;background:#fff;padding:17px 18px 23px;margin:0 auto;}
+.wrap .main-wrap .section .conents-area .conents-box img{width:100%;}
 
 .map-wrap{display:none;}
 .map-wrap .map-search .back_btn{display:block;box-sizing:border-box;width:40px;height:100%;text-align:center;}

@@ -41,6 +41,7 @@
 		<meta name="theme-color" content="#ffffff">
 
 		<script src="./js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="http://map.google.com/maps/api/js?sensor=false"></script>
 		<!--<script defer src="./js/video_player.js"></script>-->
 		<!-- <script src="./js/cover.js"></script> -->
 		<!--[if lte IE 8]>
@@ -61,7 +62,7 @@
 							<img src="./images/logo_2-1.png" alt="">
 						</a>
 					</h1>
-					<a class="menu_btn" href="javascript:;">
+					<a class="menu_btn tomado" href="javascript:;">
 						<span></span>
 						<span></span>
 						<span></span>
@@ -78,10 +79,10 @@
 						<div class="select-object">
 							<div class="select-btn-wrap">
 								<img src="./images/select_background_0.png" alt="">
-								<a class="select_1" href="javascript:;"></a>
-								<a class="select_2" href="javascript:;"></a>
-								<a class="select_3" href="javascript:;"></a>
-								<a class="select_4" href="javascript:;"></a>
+								<a class="select_1" href="javascript:;" data-num="1" data-index="아파트"></a>
+								<a class="select_2" href="javascript:;" data-num="2" data-index="오피스텔"></a>
+								<a class="select_3" href="javascript:;" data-num="3" data-index="원룸"></a>
+								<a class="select_4" href="javascript:;" data-num="4" data-index="빌라"></a>
 							</div>
 							<img src="./images/anytime.png" alt="">
 						</div>
@@ -105,8 +106,59 @@
 		<div class="map-wrap">
 			<div class="map-search">
 				<a class="back_btn" href="javascript:;">
-					<img src="./images/app_back_arrow.png" alt="">
+					<img src="./images/app_back_arrow_1.png" alt="">
 				</a>
+
+				<div class="search-box-wrap">
+					<input type="search" name="map_search_box" id="map_search_box" class="map_search_box" placeholder="월세 40이하 원룸 찾기">
+					<button class="search_btn"></button>
+				</div>
+
+				<a class="menu_btn white" href="javascript:;">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div class="map-select">
+				<div class="build-box">
+					<span class="house-image">
+						<img src="./images/data_1.png" alt="">
+					</span>
+					<span class="house-kind">
+						아파트
+					</span>
+				</div>
+				<ul class="life-kind-wrap">
+					<li class="life-1">
+						<a href="javascript:;">
+							매매
+						</a>
+					</li>
+					<li class="life-2">
+						<a href="javascript:;">
+							전세
+						</a>
+					</li>
+					<li class="life-3 on">
+						<a href="javascript:;">
+							월세
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="map_load" id="map_load">
+
+			</div>
+			
+			<div class="under-board">
+				<a class="under-title" href="javascript:;">
+				</a>
+				<div class="under-table">
+					<a class="under_btn under_btn_1" href="javascript:;"></a>
+					<a class="under_btn under_btn_2" href="javascript:;"></a>
+					<a class="under_btn under_btn_3" href="javascript:;"></a>
+				</div>
 			</div>
 		</div>
 		<script defer src="./js/move.js"></script>

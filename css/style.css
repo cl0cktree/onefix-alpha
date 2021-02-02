@@ -143,7 +143,20 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 .under-board_2 .under-sel-list{width:100%;height:70px;background:#ffffff url('../images/under_li.png') no-repeat;background-size:344px 70px;background-position:center;}
 
 .house-in-wrap{display:block;position:absolute;width:100%;min-height:100vh;background:#fff;top:0;left:0;z-index:3;}
-.house-in-wrap:after{display:block;content:'';width:100%;height:0;clear:both;}
 .house-in-wrap .house-head{width:100%;min-width:320px;height:63px;background:#db3b3b;}
+.house-in-wrap .house-head:after{display:block;content:'';width:100%;height:0;clear:both;}
 .house-in-wrap .house-head .back_btn{display:block;box-sizing:border-box;width:40px;height:100%;padding:25px 0px 0px 15px;float:left;}
 .house-in-wrap .house-head .back_btn img{width:24px;}
+
+.house-in-wrap .house-head .head-middle{width:calc(100% - 132px);max-width:250px;height:63px;padding-left:37.33%;margin-left:12px;float:left;}
+.house-in-wrap .house-head .head-middle img{position:absolute;left:0;bottom:15px;}
+
+.house-in-wrap .house-head .head-middle .life-kind-wrap{display:block;width:110px;height:63px;box-sizing:border-box;margin:0 auto;}
+.house-in-wrap .house-head .head-middle .life-kind-wrap li{box-sizing:border-box;height:63px;padding:25px 7px 15px;font-size:15px;font-weight:500;float:left;}
+.house-in-wrap .house-head .head-middle .life-kind-wrap li:first-of-type{padding-left:0;}
+.house-in-wrap .house-head .head-middle .life-kind-wrap li:last-of-type{padding-right:0;}
+.house-in-wrap .house-head .head-middle .life-kind-wrap li a{color:#ed9d9d;text-decoration:none;}
+.house-in-wrap .house-head .head-middle .life-kind-wrap li.on a{color:#ffffff;font-weight:700;}
+
+.house-in-wrap .head-star{position:fixed;width:100%;min-width:320px;height:56px;background:#ffffff url('../images/source/6/head_star.png') no-repeat;background-position:center;border: 2px solid #db3b3b;border-top:0;border-radius:0 0 20px 20px;top:63px;z-index:5;}
+.house-in-wrap #video_2{display:block;width:100%;min-width:320px;max-width:375px;margin:0 auto;}

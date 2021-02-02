@@ -39,9 +39,9 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-
+		<script type="text/javascript" src="http://map.vworld.kr/js/vworldMapInit.js.do?version=2.0&apiKey=02B38162-7B68-3F63-BA17-D1001C61D1EA&http://fixability.co.kr/onefix-alpha/index.html"></script>
 		<script src="./js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="http://map.google.com/maps/api/js?sensor=false"></script>
+		
 		<!--<script defer src="./js/video_player.js"></script>-->
 		<!-- <script src="./js/cover.js"></script> -->
 		<!--[if lte IE 8]>
@@ -147,8 +147,34 @@
 					</li>
 				</ul>
 			</div>
-			<div class="map_load" id="map_load">
+			<div class="map_load" id="vmap">
 			</div>
+
+			<script type="text/javascript">
+				// vw.MapControllerOption = {
+				// 	container : "vmap",
+				// 	mapMode : "2d-map",
+				// 	basemapType : vw.ol3.BasemapType.GRAPHIC,
+				// 	controlDensity : vw.ol3.DensityType.EMPTY,
+				// 	interactionDensity : vw.ol3.DensityType.BASIC,
+				// 	controlsAutoArrange : true,
+				// 	homePosition : vw.ol3.CameraPosition,
+				// 	initPosition : vw.ol3.CameraPosition,
+				// };
+				
+				vw.ol3.MapOptions = {
+					basemapType: vw.ol3.BasemapType.GRAPHIC
+				, controlDensity: vw.ol3.DensityType.EMPTY
+				, interactionDensity: vw.ol3.DensityType.BASIC
+				, controlsAutoArrange: true
+				, homePosition: vw.ol3.CameraPosition
+				, initPosition: vw.ol3.CameraPosition
+				}; 
+					
+				vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
+
+				// mapController = new vw.MapController(vw.MapControllerOption);
+			</script>
 			<div class="under-board">
 				<a class="under-title" href="javascript:;">
 				</a>
@@ -159,6 +185,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<script defer src="./js/move.js"></script>
 	</body>
 </html>

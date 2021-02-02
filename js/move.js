@@ -72,12 +72,13 @@ $(function(){
 		$('.map-wrap').fadeIn('300');
 	});
 	$('.back_btn').on('click',function(){
-		if ($('.under-board_1').css('bottom')=='0px'){
-			$('.under-board_2').stop().animate({'bottom':'-344'},200,function(){
+		if ($('.under-board_2').css('bottom')=='0px'){
+			$('.under-board_2').stop().animate({'bottom':'-344px'},200,function(){
 				$('.under-board_1').stop().animate({'bottom':'0'},200);
 			});
 		}else{
 			$('.map-wrap').fadeOut('300');
+			$('.under-board_1').css({'bottom':'-344px'});
 		}
 	});
 	$('.life-kind-wrap li').on('click','a',function(){

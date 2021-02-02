@@ -138,4 +138,5 @@ a{font-family:'nanumbarungothic', 'Nanum Gothic','NanumGothic','Gothic','고딕'
 .under-board_1 .under-table .under_btn_2{margin-top:15px;}
 .under-board_1 .under-table .under_btn_3{margin-top:25px;}
 
-.under-board_2{}
+.under-board_2{width:100%;}
+.under-board_2 .under-sel-title{}

@@ -56,12 +56,14 @@ $(function(){
 		var selec_num;
 		var selec_val;
 		selec_val = $(this).data('index');
+		$('.house-kind').css({'width':'auto','text-align':''});
 		if ($(this).is('.select_1')){
 			selec_num = 1;
 		}else if($(this).is('.select_2')){
 			selec_num = 2;
 		}else if($(this).is('.select_3')){
 			selec_num = 3;
+			$('.house-kind').css({'width':'60px','text-align':'center'});
 		}else if($(this).is('.select_4')){
 			selec_num = 4;
 		};
@@ -95,5 +97,14 @@ $(function(){
 			$(this).siblings('input[type="search"]').val('');
 		};
 	});
+	vw.ol3.MapOptions = {
+		basemapType: vw.ol3.BasemapType.GRAPHIC
+	, controlDensity: vw.ol3.DensityType.EMPTY
+	, interactionDensity: vw.ol3.DensityType.BASIC
+	, controlsAutoArrange: true
+	, homePosition: vw.ol3.CameraPosition
+	, initPosition: vw.ol3.CameraPosition
+	};
+	vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
 	return false;
 });

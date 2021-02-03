@@ -39,7 +39,7 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		<script type="text/javascript" src="http://map.vworld.kr/js/vworldMapInit.js.do?version=2.0&apiKey=02B38162-7B68-3F63-BA17-D1001C61D1EA&http://fixability.co.kr/onefix-alpha/index.html"></script>
+		<script type="text/javascript" src="http://api.vworld.kr/req/image?service=image&request=getmap&key=02B38162-7B68-3F63-BA17-D1001C61D1EA"></script>
 		<script src="./js/jquery-3.2.1.min.js"></script>
 		
 		<!--<script defer src="./js/video_player.js"></script>-->
@@ -164,6 +164,7 @@
 				<div class="under-sel-title">
 				</div>
 				<div class="under-sel-list">
+					<a class="house_open_btn" href="javascript:;"></a>
 				</div>
 			</div>
 		</div>
@@ -200,7 +201,40 @@
 			</div>
 			<div class="head-star">
 			</div>
-			<video id="video_2" src="http://fixability.co.kr/media/arvr_1.mp4" autoplay controls></video>
+			<video id="video_2" src="http://fixability.co.kr/media/arvr_1.mp4" autoplay="autoplay" muted="muted"></video>
+			<div class="under-staters-wrap">
+				<ul class="staters-tab">
+					<li><a href="javascript:;" class="tab tab-1 on" data-li="1">기본정보</a></li>
+					<li><a href="javascript:;" class="tab tab-2" data-li="2">매물확인</a></li>
+					<li><a href="javascript:;" class="tab tab-3" data-li="3">계약하기</a></li>
+				</ul>
+				<div class="staters staters-1 on">
+					<div class="scroll-over scroll-over-1">
+					</div>
+				</div>
+				<div class="staters staters-2">
+					<div class="scroll-over scroll-over-2">
+						<ul class="over-tab">
+							<li><a href="javascript:;" class="over over-1" data-over="1"></a></li>
+							<li><a href="javascript:;" class="over over-2" data-over="2"></a></li>
+							<li><a href="javascript:;" class="over over-3" data-over="3"></a></li>
+						</ul>
+						<div class="staters-sel staters-sel-1 on" data-sel="1">
+						</div>
+						<div class="staters-sel staters-sel-2" data-sel="2">
+						</div>
+						<div class="staters-sel staters-sel-3" data-sel="3">
+						</div>
+					</div>
+				</div>
+				<div class="staters staters-3">
+					<div class="scroll-over scroll-over-3">
+						<input type="checkbox" name="check_contract" id="check_contract" class="check_contract">
+						<label for="check_contract"></label>
+						<a class="contract_btn" href="javascript:;">계약 진행</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script defer src="./js/move.js"></script>
 	</body>

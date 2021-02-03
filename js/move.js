@@ -70,20 +70,26 @@ $(function(){
 		$('.map-wrap').find('.house-image').children('img').attr('src','./images/data_'+selec_num+'.png');
 		$('.map-wrap').find('.house-kind').html(selec_val);
 		$('.map-wrap').fadeIn('300');
+		$('.house-in-wrap').find('.head-middle ').children('img').attr('src','./images/source/6/build_'+selec_num+'.png');
 	});
 	$('.back_btn').on('click',function(){
-		if ($('.under-board_2').css('bottom')=='0px'){
-			$('.under-board_2').stop().animate({'bottom':'-344px'},200,function(){
-				$('.under-board_1').stop().animate({'bottom':'0'},200);
-			});
+		if ($('.house-in-wrap').css('display')=='block'){
+			$('.house-in-wrap').fadeOut(300);
 		}else{
-			$('.map-wrap').fadeOut('300');
-			$('.under-board_1').css({'bottom':'-344px'});
+			if ($('.under-board_2').css('bottom')=='0px'){
+				$('.under-board_2').stop().animate({'bottom':'-344px'},200,function(){
+					$('.under-board_1').stop().animate({'bottom':'0'},200);
+				});
+			}else{
+				$('.map-wrap').fadeOut('300');
+				$('.under-board_1').css({'bottom':'-344px'});
+			}
 		}
 	});
 	$('.life-kind-wrap li').on('click','a',function(){
+		var life_btn_index=$(this).parents('li').data('on');
 		$('.life-kind-wrap').find('li').removeClass('on');
-		$(this).parents('li').addClass('on');
+		$('.life-kind-wrap').find('.life-'+life_btn_index).addClass('on');
 	});
 	$('.under-title').on('click',function(){
 		if ($('.under-board_1').css('bottom')=='0px'){
@@ -111,14 +117,95 @@ $(function(){
 			$(this).siblings('input[type="search"]').val('');
 		};
 	});
-	vw.ol3.MapOptions = {
-		basemapType: vw.ol3.BasemapType.GRAPHIC
-	, controlDensity: vw.ol3.DensityType.EMPTY
-	, interactionDensity: vw.ol3.DensityType.BASIC
-	, controlsAutoArrange: true
-	, homePosition: vw.ol3.CameraPosition
-	, initPosition: vw.ol3.CameraPosition
-	};
-	vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
-	return false;
+	$('.house_open_btn').on('click',function(){
+		$('.house-in-wrap').fadeIn(300);
+	});
+	$('.tab').on('click',function(){
+		var tab_index=$(this).data('li');
+		$('.tab').removeClass('on');
+		$(this).addClass('on');
+		$('.staters').removeClass('on');
+		$('.staters-'+tab_index).addClass('on');
+	});
+	$('.over').on('click',function(){
+		var over_index=$(this).data('over');
+		$('.staters-sel').removeClass('on');
+		$('.staters-sel-'+over_index).addClass('on');
+	});
+	$('.contract_btn').on('click',function(){
+		if($('#check_contract').prop('checked')){
+			alert('해당 기능은 개발 중 입니다.');
+		}else{
+			alert('공지사항 확인을 체크 해주세요.');
+		};
+	});
+
+	// vw.ol3.MapOptions = {
+	// 	basemapType: vw.ol3.BasemapType.GRAPHIC
+	// , controlDensity: vw.ol3.DensityType.EMPTY
+	// , interactionDensity: vw.ol3.DensityType.BASIC
+	// , controlsAutoArrange: true
+	// , homePosition: vw.ol3.CameraPosition
+	// , initPosition: vw.ol3.CameraPosition
+	// };
+	// vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
+	// return false;
+
+	function execute(newWin){
+		// api.vworld.kr도메인 외 다른 도메인에 사용시 proxy를 사용해야 합니다.
+		var hosturl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+		var url = hosturl + $("#url").val();
+		var requestStr = url;
+		var dataType = $.trim($("#format").val()).toLowerCase();
+		var param = "";
+		$("#requestbody, #resultbody").empty();
+		$("#result_img, #resultbody").hide();
+		$("#result_img").attr("src","");
+		$(".mandatory input[type=text]").each(function(){
+			var val = $.trim($(this).val());
+			var id = $(this).attr("id").toLowerCase();
+			if (id == 'marker' || id == 'route') {val = encodeURIComponent(val);}
+			if (id != "url" && val != ''){
+				param = param + "&"+id + "=" + val;
+			}
+		});
+		 
+		requestStr += param.substring(1);
+		$("#requesturl").text(requestStr);
+	 
+		window.open("about:blank","responsewindow").location.href = requestStr;
+	}
+	 
+	function changeFormat(formatval){
+		$("#format").val(formatval);
+	}
+	 
+	function changeValue(id, value){
+		var targetid = id.split("_")[0];    
+		$("#" + targetid).val(value);
+	}
+	 
+	function changeCRS(id, value){
+		var targetid = id.split("_")[0];    
+		$("#" + targetid).val(value);
+		setCurrentCoord();
+	}
+	 
+	function setCurrentCoord(){
+		try {
+			var value = $("#crs").val();
+			var scrs = $("#scrs").val();
+			var epsg = value.toUpperCase(); 
+	 
+			if(value == scrs){
+				$("#center").val($("#lon").val() + "," + $("#lat").val());
+			}else{
+				var lonlat = new OpenLayers.LonLat($("#lon").val(),$("#lat").val());
+				var SCRS = new OpenLayers.Projection(scrs);
+				var TCRS = new OpenLayers.Projection(epsg);
+				var point = lonlat.transform(SCRS, TCRS);
+				$("#center").val(point.lon + "," + point.lat);
+			}
+		}catch(e){}
+	}
 });

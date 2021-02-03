@@ -69,7 +69,9 @@ $(function(){
 		};
 		$('.map-wrap').find('.house-image').children('img').attr('src','./images/data_'+selec_num+'.png');
 		$('.map-wrap').find('.house-kind').html(selec_val);
-		$('.map-wrap').fadeIn('300');
+		$('.map-wrap').stop().animate({'z-index':'1'},0,function(){
+			$('.map-wrap').stop().animate({'opacity':'1'},300)
+		});
 		$('.house-in-wrap').find('.head-middle ').children('img').attr('src','./images/source/6/build_'+selec_num+'.png');
 	});
 	$('.back_btn').on('click',function(){
@@ -81,7 +83,7 @@ $(function(){
 					$('.under-board_1').stop().animate({'bottom':'0'},200);
 				});
 			}else{
-				$('.map-wrap').fadeOut('300');
+				$('.map-wrap').stop().animate({'opacity':'0','z-index':'-2'},300);
 				$('.under-board_1').css({'bottom':'-344px'});
 			}
 		}
@@ -140,72 +142,14 @@ $(function(){
 		};
 	});
 
-	// vw.ol3.MapOptions = {
-	// 	basemapType: vw.ol3.BasemapType.GRAPHIC
-	// , controlDensity: vw.ol3.DensityType.EMPTY
-	// , interactionDensity: vw.ol3.DensityType.BASIC
-	// , controlsAutoArrange: true
-	// , homePosition: vw.ol3.CameraPosition
-	// , initPosition: vw.ol3.CameraPosition
-	// };
-	// vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
-	// return false;
-
-	function execute(newWin){
-		// api.vworld.kr도메인 외 다른 도메인에 사용시 proxy를 사용해야 합니다.
-		var hosturl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
-		var url = hosturl + $("#url").val();
-		var requestStr = url;
-		var dataType = $.trim($("#format").val()).toLowerCase();
-		var param = "";
-		$("#requestbody, #resultbody").empty();
-		$("#result_img, #resultbody").hide();
-		$("#result_img").attr("src","");
-		$(".mandatory input[type=text]").each(function(){
-			var val = $.trim($(this).val());
-			var id = $(this).attr("id").toLowerCase();
-			if (id == 'marker' || id == 'route') {val = encodeURIComponent(val);}
-			if (id != "url" && val != ''){
-				param = param + "&"+id + "=" + val;
-			}
-		});
-		 
-		requestStr += param.substring(1);
-		$("#requesturl").text(requestStr);
-	 
-		window.open("about:blank","responsewindow").location.href = requestStr;
-	}
-	 
-	function changeFormat(formatval){
-		$("#format").val(formatval);
-	}
-	 
-	function changeValue(id, value){
-		var targetid = id.split("_")[0];    
-		$("#" + targetid).val(value);
-	}
-	 
-	function changeCRS(id, value){
-		var targetid = id.split("_")[0];    
-		$("#" + targetid).val(value);
-		setCurrentCoord();
-	}
-	 
-	function setCurrentCoord(){
-		try {
-			var value = $("#crs").val();
-			var scrs = $("#scrs").val();
-			var epsg = value.toUpperCase(); 
-	 
-			if(value == scrs){
-				$("#center").val($("#lon").val() + "," + $("#lat").val());
-			}else{
-				var lonlat = new OpenLayers.LonLat($("#lon").val(),$("#lat").val());
-				var SCRS = new OpenLayers.Projection(scrs);
-				var TCRS = new OpenLayers.Projection(epsg);
-				var point = lonlat.transform(SCRS, TCRS);
-				$("#center").val(point.lon + "," + point.lat);
-			}
-		}catch(e){}
-	}
+	vw.ol3.MapOptions = {
+		basemapType: vw.ol3.BasemapType.GRAPHIC
+	, controlDensity: vw.ol3.DensityType.EMPTY
+	, interactionDensity: vw.ol3.DensityType.BASIC
+	, controlsAutoArrange: true
+	, homePosition: vw.ol3.CameraPosition
+	, initPosition: vw.ol3.CameraPosition
+	};
+	vmap = new vw.ol3.Map("vmap",  vw.ol3.MapOptions);
+	return false;
 });

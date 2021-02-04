@@ -27,7 +27,7 @@
         "type": "image/webp"
     }
 ],
-"start_url": "/index.html",
+"start_url": "http://fixability.co.kr/onefix-alpha/index.html",
 "display": "browser",
 "orientation": "landscape"
 }

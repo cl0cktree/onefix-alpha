@@ -107,7 +107,8 @@ input[type=checkbox]:checked+label:before{content:"\2713";font-size:14px;font-we
 .wrap .main-wrap .background_filter .video-wrap{display:block;position:absolute;max-width:320px;min-width:320px;padding-top:40px;top:50%;left:50%;margin:-145px -160px;}
 .wrap .main-wrap .background_filter .video-wrap .video_close_btn{position:absolute;width:40px;height:40px;background:#000 url('../images/closebtn.png') no-repeat;background-size:40px 40px;background-position:center;top:0;right:0;}
 /* .wrap .main-wrap .background_filter .video-wrap iframe{width:100%;border:0;overflow:hidden;} */
-.wrap .main-wrap .background_filter .video-wrap video{width:100%;}
+/* .wrap .main-wrap .background_filter .video-wrap video{width:100%;} */
+.wrap .main-wrap .background_filter .video-wrap iframe{width:100%;max-width:320px;min-width:320px;height:182px;}
 
 .map-wrap{display:block;position:absolute;width:100%;min-height:100vh;background:#fff;top:0;left:0;opacity:0;z-index:-2;}
 .map-wrap .map-search{width:100%;min-width:320px;height:63px;background:#db3b3b;}

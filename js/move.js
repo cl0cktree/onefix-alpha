@@ -9,8 +9,9 @@ $(function(){
 	});
 	$('.video_close_btn').on('click',function(){
 		$('.background_filter').fadeOut('300');
-		$('.video-wrap').find('video').get(0).pause();
-		$('.video-wrap').find('video').get(0).currentTime=0;
+		// $('.video-wrap').find('video').get(0).pause();
+		// $('.video-wrap').find('video').get(0).currentTime=0;
+		$("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
 	});
 
 	// window.onload = function(){

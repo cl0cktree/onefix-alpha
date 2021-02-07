@@ -166,7 +166,7 @@ input[type=checkbox]:checked+label:before{content:"\2713";font-size:14px;font-we
 
 .house-in-wrap .head-star{position:absolute;width:100%;min-width:320px;height:56px;background:#ffffff url('../images/source/6/head_star.png') no-repeat;background-size:305px 162px;background-position:center 0px;border: 2px solid #db3b3b;border-top:0;border-radius:0 0 20px 20px;top:63px;z-index:5;}
 .house-in-wrap #video_2{display:block;width:100%;min-width:320px;max-width:375px;margin:0 auto;}
-.house-in-wrap .under-staters-wrap{width:100%;min-width:320px;max-width:375px;border-top:4px solid #db3b3b;margin:0 auto;}
+.house-in-wrap .under-staters-wrap{width:100%;min-width:320px;max-width:375px;height:calc(100vh - 385px);border-top:4px solid #db3b3b;margin:0 auto;}
 .house-in-wrap .under-staters-wrap .staters-tab{display:block;width:100%;min-width:320px;max-width:375px;}
 .house-in-wrap .under-staters-wrap .staters-tab:after{content:'';display:block;width:97.33%;border-bottom:4px solid #513e3e;margin:0 auto;overflow:hidden;}
 .house-in-wrap .under-staters-wrap .staters-tab li{width:33.33%;height:54px;box-sizing:border-box;float:left;text-align:center;}
